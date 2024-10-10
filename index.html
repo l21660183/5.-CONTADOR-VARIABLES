@@ -1,0 +1,107 @@
+<!-- ANGIE XIMENA 0LVERA ALVAREZ-->
+<!--ACTIVIDAD 5 CONTADOR DE VARIABLES-->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contador con Variables</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 250px;
+        }
+
+        h1 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        #counter {
+            font-size: 48px;
+            font-weight: bold;
+            color: #007bff;
+            margin-bottom: 20px;
+        }
+
+        button {
+            background-color: #28a745;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            margin: 5px;
+        }
+
+        button:hover {
+            background-color: #218838;
+        }
+
+        button#bajarBtn {
+            background-color: #dc3545;
+        }
+
+        button#bajarBtn:hover {
+            background-color: #c82333;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Contador</h1>
+        <div id="counter">0</div>
+        <button id="aumentarBtn">Subir</button>
+        <button id="bajarBtn">Bajar</button>
+    </div>
+
+    <script>
+        // Variables para los botones
+        const subirparriba = "Subir";
+        const bajarpabajo = "Bajar";
+
+        // Elementos del DOM
+        const counterElement = document.getElementById("counter");
+        const increaseBtn = document.getElementById("aumentarBtn");
+        const decreaseBtn = document.getElementById("bajarBtn");
+
+        // Inicializar el texto de los botones usando las variables
+        increaseBtn.textContent = subirparriba;
+        decreaseBtn.textContent = bajarpabajo;
+
+        // Variable para el valor del contador
+        let counterValue = 0;
+
+        // Funciones para aumentar y disminuir el contador
+        function increaseCounter() {
+            counterValue++;
+            counterElement.textContent = counterValue;
+        }
+
+        function decreaseCounter() {
+            counterValue--;
+            counterElement.textContent = counterValue;
+        }
+
+        // Añadir eventos a los botones
+        increaseBtn.addEventListener("click", increaseCounter);
+        decreaseBtn.addEventListener("click", decreaseCounter);
+    </script>
+</body>
+</html>
